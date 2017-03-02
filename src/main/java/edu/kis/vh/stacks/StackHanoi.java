@@ -1,10 +1,10 @@
 package edu.kis.vh.stacks;
 
-public class StackHanoi extends stack {
+public class StackHanoi extends Stack {
 
 	int totalRejected = 0;
 
-	public int reportRejected() {
+	public int getTotalRejected() {
 		return totalRejected;
 	}
 
