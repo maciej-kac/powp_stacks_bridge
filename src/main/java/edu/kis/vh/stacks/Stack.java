@@ -6,59 +6,39 @@ package edu.kis.vh.stacks;
  */
 public class Stack {
 
-	private static final int EMPTY_STACK_INDICATOR = -1;
+	private StackArray stackArray;
 
-	private static final int MAX_ITEMS = 12;
+	public Stack() {
+		this.stackArray = new StackArray();
+	}
+	
+	public Stack(StackArray stackArray) {
+		this.stackArray = stackArray;
+	}
 
-	private int[] items = new int[MAX_ITEMS];
-
-	private int total = EMPTY_STACK_INDICATOR;
-
-	/**
-	 * @return 
-	 */
 	public int getTotal() {
-		return total;
+		return stackArray.getTotal();
 	}
 
-	/**
-	 * @param i - integer number to be pushed
-	 */
 	public void push(int i) {
-		if (!isFull())
-			items[++total] = i;
+		stackArray.push(i);
 	}
 
-	/**
-	 * @return true when stack is empty and false when isn't empty
-	 */
 	public boolean isEmpty() {
-		return total == EMPTY_STACK_INDICATOR;
+		return stackArray.isEmpty();
 	}
 
-	/**
-	 * @return true when stack is full and false when isn't full
-	 */
 	public boolean isFull() {
-		return total == 11;
+		return stackArray.isFull();
 	}
 
-	/**
-	 * @return number from top of the stack
-	 */
 	public int top() {
-		if (isEmpty())
-			return EMPTY_STACK_INDICATOR;
-		return items[total];
+		return stackArray.top();
 	}
 
-	/**
-	 * @return number from top of the stack and remove it from stack
-	 */
 	public int pop() {
-		if (isEmpty())
-			return EMPTY_STACK_INDICATOR;
-		return items[total--];
+		return stackArray.pop();
 	}
+	
 
 }
