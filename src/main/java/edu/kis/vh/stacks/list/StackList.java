@@ -4,6 +4,7 @@ public class StackList {
 
 	private Node last;
 	private int i;
+	private int total;
 
 	public void pushElement(int i) {
 		if (last == null)
@@ -13,6 +14,7 @@ public class StackList {
 			last.getNext().setPrev(last);
 			last = last.getNext();
 		}
+		total++;
 	}
 
 	public boolean empty() {
@@ -28,15 +30,23 @@ public class StackList {
 			return -1;
 		return last.getValue();
 	}
+	
+	public int total() {
+		if (empty())
+			return -1;
+		return total;
+	}
 
 	public int pop() {
 		if (empty())
 			return -1;
 		int ret = last.getValue();
 		last = last.getPrev();
+		total--;
 		return ret;
 	}
 
+	//Jedyną użyteczną opcją Eclipse IDE było Refactor>Rename
 }
 
 class Node {
