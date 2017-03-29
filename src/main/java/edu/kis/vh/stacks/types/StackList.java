@@ -1,11 +1,11 @@
-package edu.kis.vh.stacks.list;
+package edu.kis.vh.stacks.types;
 
 import edu.kis.vh.stacks.IStack;
 
 public class StackList implements IStack {
 
 	private Node last;
-	private int total;
+	private int total = IStack.EMPTY_STACK_INDICATOR;
 
 	@Override
 	public void push(int i) {
@@ -26,27 +26,27 @@ public class StackList implements IStack {
 
 	@Override
 	public boolean isFull() {
-		return false;
+		return total == IStack.MAX_ITEMS;
 	}
 
 	@Override
 	public int top() {
 		if (isEmpty())
-			return -1;
+			return IStack.EMPTY_STACK_INDICATOR;
 		return last.getValue();
 	}
 	
 	@Override
 	public int getTotal() {
 		if (isEmpty())
-			return -1;
+			return IStack.EMPTY_STACK_INDICATOR;
 		return total;
 	}
 
 	@Override
 	public int pop() {
 		if (isEmpty())
-			return -1;
+			return IStack.EMPTY_STACK_INDICATOR;
 		int ret = last.getValue();
 		last = last.getPrev();
 		total--;

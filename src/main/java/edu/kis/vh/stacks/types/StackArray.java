@@ -1,16 +1,12 @@
-package edu.kis.vh.stacks.list;
+package edu.kis.vh.stacks.types;
 
 import edu.kis.vh.stacks.IStack;
 
 public class StackArray implements IStack {
 
-	private static final int EMPTY_STACK_INDICATOR = -1;
+	private int[] items = new int[IStack.MAX_ITEMS];
 
-	private static final int MAX_ITEMS = 12;
-
-	private int[] items = new int[MAX_ITEMS];
-
-	private int total = EMPTY_STACK_INDICATOR;
+	private int total = IStack.EMPTY_STACK_INDICATOR;
 
 	@Override
 	public int getTotal() {
@@ -25,25 +21,25 @@ public class StackArray implements IStack {
 
 	@Override
 	public boolean isEmpty() {
-		return total == EMPTY_STACK_INDICATOR;
+		return total == IStack.EMPTY_STACK_INDICATOR;
 	}
 
 	@Override
 	public boolean isFull() {
-		return total == 11;
+		return total == IStack.MAX_ITEMS;
 	}
 
 	@Override
 	public int top() {
 		if (isEmpty())
-			return EMPTY_STACK_INDICATOR;
+			return IStack.EMPTY_STACK_INDICATOR;
 		return items[total];
 	}
 
 	@Override
 	public int pop() {
 		if (isEmpty())
-			return EMPTY_STACK_INDICATOR;
+			return IStack.EMPTY_STACK_INDICATOR;
 		return items[total--];
 	}
 
