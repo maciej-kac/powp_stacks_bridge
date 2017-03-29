@@ -1,8 +1,10 @@
 package edu.kis.vh.stacks;
 
+import edu.kis.vh.stacks.types.StackList;
+
 public class StackFIFO extends Stack {
 
-	private final Stack stack = new Stack();
+	private final Stack stack = new Stack(new StackList());
 
 	public StackFIFO() {
 		super();
@@ -24,4 +26,6 @@ public class StackFIFO extends Stack {
 
 		return result;
 	}
+	
+	//Użyłem w tej klasie stosu opartego na StackList, ponieważ jest on bardziej optymalny.
 }
