@@ -20,6 +20,8 @@ import edu.kis.vh.stacks.factory.ListStacksFactory;
 
 // Kombinacja Alt + -> i Alt + <- umożliwa nawigację po miejscach w plikach, w których ostatnio byłem
 
+// Zasadę izolacji łamią wszystkie klasy fabryk, ponieważ tworzone stosy zależą od tego jaką implementację stosu wybierzemy. 
+
 class StacksDemo {
 
 	public static void main(String[] args) {
