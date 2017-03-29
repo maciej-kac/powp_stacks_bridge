@@ -44,4 +44,8 @@ public class Stack {
 	
 	//Konsekwencją zmiany typu atrybutu na interfejs jest 
 	//możliwość przechowywania w nim obiektów różnych klas (które implementują ten interfejs "IStack") 
+	
+	// Opcja "Navigate->Open declaration" przekierowuje mnie do miejsca, w którym deklarowany jest nagłówek funkcji, czyli do interfejsu.
+	// Opcja "Navigate->Quick type hierachy" przekierowuje mnie do miejsca, w którym występuje ciało metody.
+	// Gdy znajduje się ono w kilku klasach, istnieje możliwość wyboru klasy, do której chcę się przekierować.
 }
