@@ -42,4 +42,6 @@ public class Stack {
 		return stack.pop();
 	}
 	
+	//Konsekwencją zmiany typu atrybutu na interfejs jest 
+	//możliwość przechowywania w nim obiektów różnych klas (które implementują ten interfejs "IStack") 
 }
