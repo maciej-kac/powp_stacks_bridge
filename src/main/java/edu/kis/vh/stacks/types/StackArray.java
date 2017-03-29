@@ -26,7 +26,7 @@ public class StackArray implements IStack {
 
 	@Override
 	public boolean isFull() {
-		return total == IStack.MAX_ITEMS;
+		return total == IStack.MAX_ITEMS-1;
 	}
 
 	@Override
